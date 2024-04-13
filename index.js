@@ -6,6 +6,12 @@ import env from "dotenv";
 
 env.config();
 
+import { fileURLToPath } from "url";
+import path from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 const port = 3000;
 
@@ -15,8 +21,11 @@ const db = new pg.Client({
 
 db.connect();
 
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
     const response = await db.query("SELECT * FROM progressotracker");
