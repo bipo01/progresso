@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Progress Tracker</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <form action="add" method="post">
+                <input
+                    type="text"
+                    name="goalName"
+                    placeholder="Objetivo"
+                    required
+                />
+                <input type="number" name="days" placeholder="Dias" required />
+
+                <button id="addBtn" type="submit">➕</button>
+            </form>
+        </div>
+        <% if (data.length > 0) { %> <% for( let i = 0; i < objetivos.length;
+        i++ ) { %>
+        <section>
+            <table>
+                <h1><%=objetivos[i]%></h1>
+                <tbody>
+                    <tr>
+                        <% for (let j = 0; j < data[i].dias; j++) { %>
+
+                        <td class="cell <%= diasSeparados[i][j].cor%>">
+                            <form action="/checar" method="post">
+                                <input
+                                    class="nmrBtn"
+                                    type="submit"
+                                    name="diaAChecar"
+                                    value="<%= diasSeparados[i][j].dia%>"
+                                />
+                                <input
+                                    type="hidden"
+                                    name="idAChecar"
+                                    value="<%= diasSeparados[i][j].id%>"
+                                />
+                                <input
+                                    type="hidden"
+                                    name="cor"
+                                    value="<%= diasSeparados[i][j].cor%>"
+                                />
+                            </form>
+                        </td>
+                        <% } %>
+                    </tr>
+                </tbody>
+            </table>
+            <form action="/delete" method="post">
+                <input
+                    type="hidden"
+                    name="idDeletado"
+                    value="<%= data[i].id%>"
+                />
+                <input
+                    type="hidden"
+                    name="objetivoDeletado"
+                    value="<%= data[i].objetivo %>"
+                />
+                <input type="submit" value="🗑️" class="deleteBtn" />
+            </form>
+        </section>
+        <% } %> <% } %>
+
+        <script></script>
+    </body>
+</html>

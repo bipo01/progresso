@@ -1,0 +1,112 @@
+body {
+    background: greenyellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    margin: 20px auto;
+    background: white;
+    width: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.278);
+}
+
+.container form input {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: rgba(202, 227, 164, 0.478);
+}
+
+.container form button {
+    margin-left: 20px;
+    background: rgb(90, 247, 90);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+table {
+    margin: 10px auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+tr {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+td {
+    width: 80px;
+    height: 80px;
+    margin: 2px;
+    border: 1px solid black;
+    font-size: 2rem;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+td button {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1.8rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: green;
+}
+
+section {
+    background: white;
+    width: 95%;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.345);
+}
+
+.verde {
+    background: green;
+}
+
+.deleteBtn {
+    margin: 0 94%;
+    background: none;
+    border: none;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.white {
+    background: white;
+}
+
+.nmrBtn {
+    padding: 25px 32px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+#addBtn:hover {
+    cursor: pointer;
+    background-color: rgba(90, 247, 90, 0.5);
+}
